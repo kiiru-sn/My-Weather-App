@@ -92,3 +92,18 @@ li {
 .fa-cloud-rain {
   font-size: 30px;
 }
+
+.codedBy {
+  padding-top: 200px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.linkedIn {
+  text-decoration: none;
+  color: rgb(75, 186, 255);
+}
+
+.linkedIn:hover {
+  text-decoration: underline;
+}
