@@ -107,3 +107,21 @@ li {
 .linkedIn:hover {
   text-decoration: underline;
 }
+
+.gitHub {
+  text-decoration: none;
+  color: rgb(75, 186, 255);
+}
+
+.gitHub:hover {
+  text-decoration: underline;
+}
+
+.netlify {
+  text-decoration: none;
+  color: rgb(75, 186, 255);
+}
+
+.netlify:hover {
+  text-decoration: underline;
+}
