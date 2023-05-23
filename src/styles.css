@@ -42,19 +42,23 @@ form {
   background: rgba(75, 75, 75, 0.5);
 }
 
-.nIcon {
+#icon {
   position: relative;
-  bottom: 15px;
+  bottom: 20px;
+  right: 20px;
 }
 
 #number {
-  font-size: 60px;
+  font-size: 70px;
+  position: relative;
+  right: 40px;
 }
 
 #degrees {
   position: relative;
   font-size: 20px;
-  bottom: 27px;
+  bottom: 35px;
+  right: 40px;
 }
 
 #c {
