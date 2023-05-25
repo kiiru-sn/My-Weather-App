@@ -27,13 +27,13 @@ currentInfo.innerHTML = formatDate(currentTime);
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#number").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#number").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
+
   console.log(response.data);
 
   let iconElement = document.querySelector("#icon");
@@ -75,25 +75,27 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#cLButton");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-//function changeF(event) {
-//event.preventDefault();
-//let number = document.querySelector("#number");
-//let temperature = number.innerHTML;
-//number.innerHTML = Math.round((temperature * 9) / 5 + 32);
-//}
+function changeF(event) {
+  event.preventDefault();
+  let number = document.querySelector("#number");
+  let temperature = number.innerHTML;
+  number.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+}
 
-//function changeC(event) {
-//event.preventDefault();
-//let number = document.querySelector("#number");
-//let temperature = number.innerHTML;
-//number.innerHTML = Math.round(((temperature - 32) * 5) / 9);
-//}
+let celsiusTemperature = null;
 
-//let fahrenheit = document.querySelector("#f");
-//fahrenheit.addEventListener("click", changeF);
+function changeC(event) {
+  event.preventDefault();
+  let number = document.querySelector("#number");
+  let temperature = number.innerHTML;
+  number.innerHTML = Math.round(((temperature - 32) * 5) / 9);
+}
 
-//let celcius = document.querySelector("#c");
-//celcius.addEventListener("click", changeC);
+let fahrenheit = document.querySelector("#f");
+fahrenheit.addEventListener("click", changeF);
+
+let celcius = document.querySelector("#c");
+celcius.addEventListener("click", changeC);
 
 ////////////////////
 
