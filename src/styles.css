@@ -129,3 +129,11 @@ li {
 .netlify:hover {
   text-decoration: underline;
 }
+
+.forecast-max {
+  font-size: 12px;
+}
+
+.forecast-min {
+  font-size: 12px;
+}
