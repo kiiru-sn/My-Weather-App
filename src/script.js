@@ -78,7 +78,7 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 function changeF(event) {
   event.preventDefault();
   let number = document.querySelector("#number");
-  let temperature = number.innerHTML;
+
   number.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 
