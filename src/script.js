@@ -25,6 +25,31 @@ let currentInfo = document.querySelector("#dayAndTime");
 let currentTime = new Date();
 currentInfo.innerHTML = formatDate(currentTime);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+            <div class = "forecastDay">${day}</div>
+            
+            <i class="fa-solid fa-cloud-sun"></i>
+            <br />
+            <div class = "forecastTemperatures"> 
+            <span class="forecast-max">15°</span> /
+            <span class="forecast-min">9°</span>
+            </div>
+          </div>
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   celsiusTemperature = response.data.main.temp;
@@ -60,6 +85,7 @@ let form = document.querySelector("#searchBar");
 form.addEventListener("submit", handleSubmit);
 
 search("San Diego");
+displayForecast();
 
 function searchLocation(position) {
   let apiKey = "a710bd8bd76400c9658ef649d9e81728";
@@ -78,7 +104,6 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 function changeF(event) {
   event.preventDefault();
   let number = document.querySelector("#number");
-
   number.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 
