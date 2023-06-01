@@ -27,7 +27,6 @@ currentInfo.innerHTML = formatDate(currentTime);
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
   days.forEach(function (day) {
@@ -38,14 +37,13 @@ function displayForecast() {
             
             <i class="fa-solid fa-cloud-sun"></i>
             <br />
-            <div class = "forecastTemperatures"> 
-            <span class="forecast-max">15°</span> /
-            <span class="forecast-min">9°</span>
+            <div class ="forecastTemperatures"> 
+            <span id="forecast-max">15°</span> /
+            <span id="forecast-min">9°</span>
             </div>
           </div>
       `;
   });
-
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
@@ -58,6 +56,11 @@ function displayWeatherCondition(response) {
     response.data.weather[0].main;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
+
+  //let maxTemperature = document.querySelector("#forecast-max");
+  //maxTemperature.innerHTML = Math.round(response.data.main.temp_max);
+  //let minTemperature = document.querySelector("#forecast-min");
+  //minTemperature.innerHTML = Math.round(response.data.main.temp_min);
 
   console.log(response.data);
 
