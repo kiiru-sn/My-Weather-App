@@ -1,8 +1,9 @@
 body {
   padding-top: 150px;
   font-family: "Ubuntu", sans-serif;
-  color: #545454;
-  background: rgb(230, 230, 230);
+  color: #505050;
+  background: rgba(194, 175, 201, 0.5);
+  background-image: url("https://img.freepik.com/free-vector/flat-design-roof-tile-pattern_23-2149257258.jpg?w=740&t=st=1685709326~exp=1685709926~hmac=9d0f3de16914602f22378a51fe02e0b0379fc7c6deb4f424e111952c2fc0149b");
 }
 
 form {
@@ -14,14 +15,14 @@ form {
   border-radius: 40px;
   width: 550px;
   padding: 20px 20px;
-  background: rgba(255, 247, 247, 0.5);
-  box-shadow: 10px 10px 50px #777777;
+  background: rgba(193, 185, 200, 0.85);
+  box-shadow: 0px 0px 20px 20px #a0a0a0;
 }
 
 .currentButton {
   border-radius: 5px;
   border-style: none;
-  padding: 1px 0px;
+  padding: 1px 12px;
   background: rgba(237, 237, 237, 0.5);
 }
 .currentButton:hover {
@@ -100,12 +101,13 @@ li {
 .codedBy {
   padding-top: 10px;
   text-align: center;
-  font-size: 10px;
+  font-size: 13px;
+  color: rgb(255, 255, 255);
 }
 
 .linkedIn {
   text-decoration: none;
-  color: rgb(75, 186, 255);
+  color: rgb(234, 201, 255);
 }
 
 .linkedIn:hover {
@@ -114,7 +116,7 @@ li {
 
 .gitHub {
   text-decoration: none;
-  color: rgb(75, 186, 255);
+  color: rgb(234, 201, 255);
 }
 
 .gitHub:hover {
@@ -123,7 +125,7 @@ li {
 
 .netlify {
   text-decoration: none;
-  color: rgb(75, 186, 255);
+  color: rgb(234, 201, 255);
 }
 
 .netlify:hover {
