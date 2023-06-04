@@ -17,7 +17,6 @@ function formatDate(date) {
     minutes = `0${minutes}`;
   }
   let day = days[date.getDay()];
-
   return `${day}, ${hours}:${minutes}`;
 }
 
@@ -25,7 +24,9 @@ let currentInfo = document.querySelector("#dayAndTime");
 let currentTime = new Date();
 currentInfo.innerHTML = formatDate(currentTime);
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
+
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
@@ -51,8 +52,8 @@ function displayForecast() {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "a710bd8bd76400c9658ef649d9e81728";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayWeatherCondition(response) {
@@ -97,7 +98,6 @@ let form = document.querySelector("#searchBar");
 form.addEventListener("submit", handleSubmit);
 
 search("San Diego");
-displayForecast();
 
 function searchLocation(position) {
   let apiKey = "a710bd8bd76400c9658ef649d9e81728";
