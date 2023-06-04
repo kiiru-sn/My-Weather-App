@@ -97,7 +97,7 @@ function handleSubmit(event) {
 let form = document.querySelector("#searchBar");
 form.addEventListener("submit", handleSubmit);
 
-search("San Diego");
+search("Tokyo");
 
 function searchLocation(position) {
   let apiKey = "a710bd8bd76400c9658ef649d9e81728";
