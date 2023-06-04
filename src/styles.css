@@ -4,6 +4,7 @@ body {
   color: #505050;
   background: rgba(194, 175, 201, 0.5);
   background-image: url("https://img.freepik.com/free-vector/flat-design-roof-tile-pattern_23-2149257258.jpg?w=740&t=st=1685709326~exp=1685709926~hmac=9d0f3de16914602f22378a51fe02e0b0379fc7c6deb4f424e111952c2fc0149b");
+  background-position: cover;
 }
 
 form {
